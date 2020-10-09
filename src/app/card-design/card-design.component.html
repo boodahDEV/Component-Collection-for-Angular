@@ -1,0 +1,93 @@
+<nb-card status="primary">
+  <nb-card-header>
+    <span>Create New Config Card</span>
+  </nb-card-header>
+
+  <nb-card-body>
+    <!-- HEADER -->
+    <div class="row">
+      <div class="col-md-6">
+        <label class="label">Header</label>
+      </div>
+      <div class="col-md-6 row">
+        <nb-checkbox (checkedChange)="toogleHeader($event)">
+          Active
+        </nb-checkbox>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="isHeader">
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
+        <label class="label">Title:</label>
+      </div>
+      <div class="col-md-8">
+        <input type="text" nbInput fieldSize="tiny" />
+      </div>
+      <div class="row">
+      <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <nb-select size="tiny" placeholder="Type:">
+            <nb-option value="1">status</nb-option>
+            <nb-option value="2">accent</nb-option>
+            <nb-option [value]="null">-none-</nb-option>
+          </nb-select>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <nb-select size="tiny" placeholder="Color:">
+            <nb-option value="1">success</nb-option>
+            <nb-option value="2">primary</nb-option>
+            <nb-option value="3">info</nb-option>
+            <nb-option value="4">danger</nb-option>
+            <nb-option value="5">warning</nb-option>
+            <nb-option [value]="null">-none-</nb-option>
+        </nb-select>
+      </div>
+    </div>
+    </div>
+    <!-- HEADER -->
+    <br>
+    <!-- BODY -->
+    <div class="row">
+      <div class="col-md-4">
+        <label class="label">Grid: </label>
+      </div>
+      <div class="col-md-8 row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <nb-select size="tiny" placeholder="Row:" (selectedChange)="selectGridRow($event)">
+            <nb-option value="1">1</nb-option>
+            <nb-option value="2">2</nb-option>
+            <nb-option value="3">3</nb-option>
+            <nb-option value="4">4</nb-option>
+            <nb-option value="5">5</nb-option>
+            <nb-option value="more">more</nb-option>
+          </nb-select>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <nb-select size="tiny" placeholder="Col:" (selectedChange)="selectGridCol($event)">
+            <nb-option value="1">1</nb-option>
+            <nb-option value="2">2</nb-option>
+            <nb-option value="3">3</nb-option>
+            <nb-option value="4">4</nb-option>
+            <nb-option value="5">5</nb-option>
+            <nb-option value="more">more</nb-option>
+        </nb-select>
+      </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="gridToogle != null">
+      <div class="col-md-1"></div>
+      <div class="col-md-4" *ngFor="let type of gridToogle">
+        <nb-form-field>
+          <nb-icon nbPrefix icon="at-outline" pack="eva"></nb-icon>
+          <input type="text" nbInput fieldSize="tiny" placeholder="{{type.tag}}"/>
+        </nb-form-field>
+      </div>
+
+    </div>
+
+  </nb-card-body>
+</nb-card>

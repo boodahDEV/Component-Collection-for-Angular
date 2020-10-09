@@ -4,19 +4,28 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbCardModule, NbActionsModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbActionsModule, NbInputModule, NbButtonModule, NbCheckboxModule, NbSelectModule, NbFormFieldModule, NbIconModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { CardTestConfigComponent } from './card-test-config/card-test-config.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CardDesignComponent } from './card-design/card-design.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardTestConfigComponent
+    DashboardComponent,
+    CardDesignComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NbActionsModule,
+    NbInputModule,
+    NbButtonModule,
+    NbCheckboxModule,
+    NbSelectModule,
+    NbFormFieldModule,
+    NbIconModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,

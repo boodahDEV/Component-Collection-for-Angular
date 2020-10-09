@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CardTestConfigComponent } from './card-test-config/card-test-config.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: CardTestConfigComponent,
-    pathMatch: 'full'
+    component: DashboardComponent,
+    pathMatch: 'full',
+    data:{}
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
